@@ -247,7 +247,7 @@ jobs:
 
     steps:
       - name: "Request review from @nucleos-bot"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v4.1"
         with:
           github-token: "${{ secrets.NUCLEOS_BOT_TOKEN }}"
           script: |
@@ -264,7 +264,7 @@ jobs:
             })
 
       - name: "Assign @nucleos-bot"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v4.1"
         with:
           github-token: "${{ secrets.NUCLEOS_BOT_TOKEN }}"
           script: |
@@ -281,7 +281,7 @@ jobs:
             })
 
       - name: "Approve pull request"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v4.1"
         if: "github.actor != 'nucleos-bot'"
         with:
           github-token: "${{ secrets.NUCLEOS_BOT_TOKEN }}"
@@ -296,7 +296,7 @@ jobs:
             })
 
       - name: "Merge pull request"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v4.1"
         with:
           github-token: "${{ secrets.NUCLEOS_BOT_TOKEN }}"
           script: |
